@@ -193,21 +193,21 @@ main {
   /* grid-area: bio; */
 }
 
-#creativity {
+#web {
   border: 2px solid maroon;
   padding: 5px;
   margin: 20px 5px;
   /* grid-area: quote; */
 }
 
-#sports {
+#hosting {
   border: 2px solid blue;
   padding: 5px;
   margin: 20px 5px;
   /* grid-area: quote; */
 }
 
-#about {
+#org {
   border: 2px solid violet;
   padding: 5px;
   margin: 20px 5px;

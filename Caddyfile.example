@@ -1,0 +1,53 @@
+# Caddyfile for swisshostedsolutions.ch
+# Language redirect happens server-side (no JavaScript, per project rules):
+# "/" is redirected based on the Accept-Language request header.
+# German is the primary language and the default target.
+#
+# Adjust the site address and the root path to your VPS setup, then reload:
+#   caddy validate --config /etc/caddy/Caddyfile
+#   systemctl reload caddy
+
+swisshostedsolutions.ch {
+	root * /srv/shswebsite
+
+	# Visitors whose browser prefers English get /en/, everyone else /de/.
+	# Note: this is a simple substring match on the Accept-Language header.
+	# A header like "de-CH,de;q=0.9,en;q=0.5" starts with "de", so the
+	# ordering below (German checked first) keeps German the default.
+	@german {
+		path /
+		header Accept-Language de*
+	}
+	redir @german /de/ 302
+
+	@english {
+		path /
+		header Accept-Language en*
+	}
+	redir @english /en/ 302
+
+	# Everything else (no header, other languages): German is the default.
+	@root path /
+	redir @root /de/ 302
+
+	# Serve the bilingual 404 page for missing files.
+	handle_errors {
+		@notfound expression {http.error.status_code} == 404
+		rewrite @notfound /404.html
+		file_server
+	}
+
+	file_server
+
+	header {
+		# The site sets no cookies and loads nothing from third parties.
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+		-Server
+	}
+
+	encode gzip zstd
+}

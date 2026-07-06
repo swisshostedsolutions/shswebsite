@@ -554,6 +554,24 @@ img, svg { display: block; max-width: 100%; }
 .cta-banner .btn { margin-top: 1rem; }
 
 /* ---------- Project cards ---------- */
+.project-card { position: relative; }
+
+/* Stretched Link: macht die ganze Kachel klickbar, ohne JS */
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--link);
+  text-decoration: none;
+}
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.project-card:hover .card-link { text-decoration: underline; }
+
 .project-card .thumb {
   height: 9rem;
   border-radius: var(--radius-sm);

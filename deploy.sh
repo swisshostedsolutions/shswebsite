@@ -37,7 +37,6 @@ rsync -avz --delete \
     --exclude=".git/" \
     --exclude="deploy.sh" \
     --exclude="README.md" \
-    --exclude="Caddyfile.example" \
     ./ ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
 
 echo "✅ Deployment erfolgreich abgeschlossen!"

@@ -10,13 +10,13 @@ No frameworks, no build step, no CDNs, no cookies, no tracking.
 
 | Path | Content |
 |---|---|
-| `index.html` | Fallback language redirect to `/de/` (production redirect is done by Caddy) |
+| `index.html` | Fallback language redirect to `/de/` (production does a server-side 301 via nginx) |
 | `de/` | German pages: `index.html`, `ueber-uns.html`, `projekte.html`, `kontakt.html` |
 | `en/` | English pages: `index.html`, `about.html`, `projects.html`, `contact.html` |
 | `css/styles.css` | Single stylesheet (design tokens, light/dark themes) |
 | `assets/` | Logo, favicon, self-hosted fonts (Inter + Space Grotesk, OFL) |
 | `404.html` | Bilingual not-found page |
-| `Caddyfile.example` | Caddy config: Accept-Language redirect, 404 handling, security headers |
+| `deploy.sh` | rsync deployment to the web VM (not deployed to the webroot itself) |
 | `mockup/` | Design mockup the site was built from (not deployed) |
 
 ## Conventions
@@ -25,7 +25,7 @@ No frameworks, no build step, no CDNs, no cookies, no tracking.
   that applies the persisted light/dark choice (`localStorage` key `shs-theme`) and wires
   the theme toggle. Without JS the site fully works and follows the OS color scheme.
 - **Language switch**: plain links between the DE/EN version of each page; the server
-  (Caddy) redirects `/` by `Accept-Language`, defaulting to German.
+  (nginx) redirects `/` to `/de/` with a 301 (German is the primary language).
 - All asset paths are absolute to the server root (`/css/…`, `/assets/…`).
 
 ## Local preview

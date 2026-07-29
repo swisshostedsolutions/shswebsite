@@ -1,112 +1,262 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark light">
-  <meta name="description"
-    content="Herzlich willkommen! Markus Eicher stellt sich vor. Software Entwickler, kreativer Mensch und Autodidakt">
-  <link rel="me" href="https://fosstodon.org/@MarkusEicher">
-  <!-- <link rel="stylesheet" href="/fullreset.css"> -->
-  <link rel="stylesheet" href="/global.css">
-  <link rel="alternate" hreflang="en" href="https://markuseicher.info/" />
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg">
-
-
-  <title>Markus Eicher - Software Entwickler, kreativer Mensch und Autodidakt</title>
-
+  <title>Swiss Hosted Solutions — Open Source auf Schweizer Boden</title>
+  <meta name="description" content="Swiss Hosted Solutions ist ein gemeinnütziger Verein nach Schweizer Recht. Wir fördern reine Open-Source-Software und Lösungen, die ausschliesslich in der Schweiz gehostet werden.">
+  <link rel="canonical" href="https://swisshostedsolutions.ch/de/">
+  <link rel="alternate" hreflang="de" href="https://swisshostedsolutions.ch/de/">
+  <link rel="alternate" hreflang="en" href="https://swisshostedsolutions.ch/en/">
+  <link rel="alternate" hreflang="x-default" href="https://swisshostedsolutions.ch/de/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/icon-secondary.png">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    /* Einzige JS-Ausnahme der Website: gespeichertes Farbschema vor dem ersten
+       Rendern anwenden. Ohne JS folgt die Seite der Systemeinstellung. */
+    (function () {
+      var t = localStorage.getItem("shs-theme");
+      if (t) { document.documentElement.setAttribute("data-theme", t); }
+    })();
+  </script>
+  <noscript><style>.theme-toggle { display: none; }</style></noscript>
 </head>
-
 <body>
 
-  <header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/de/" aria-label="Swiss Hosted Solutions — Startseite">
+        <svg viewBox="0 0 64 48" aria-hidden="true">
+          <path d="M2 7 C20 -1 44 13 62 5 L62 41 C44 49 20 35 2 43 Z" fill="#ce3126"/>
+          <rect x="28" y="12" width="8" height="24" rx="1.5" fill="#f1f1e1"/>
+          <rect x="20" y="20" width="24" height="8" rx="1.5" fill="#f1f1e1"/>
+        </svg>
+        <span class="brand-name">Swiss Hosted<br><span>Solutions</span></span>
+      </a>
 
-    <img src="/assets/Profile-MKE-small.png" alt="Portraitaufnahme von Markus Eicher, der lächelnd in die Kamera schaut.">
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Menü anzeigen">
 
-    <nav>
-      <ul class="navigation">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#software">Software</a></li>
-        <li><a href="#creativity">Kreatvivität</a></li>
-        <li><a href="#sports">Sport</a></li>
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-        <li><a href="/" hreflang="en">English</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="/de/" aria-current="page">Startseite</a></li>
+          <li><a href="/de/ueber-uns.html">Über uns</a></li>
+          <li><a href="/de/projekte.html">Projekte</a></li>
+          <li><a href="/de/kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
 
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <a href="/de/" hreflang="de" aria-current="true">DE</a>
+          <a href="/en/" hreflang="en" lang="en">EN</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <label class="nav-toggle" for="nav-check">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </label>
+      </div>
+    </div>
   </header>
 
   <main>
-
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-inner">
-        <h1>Markus Eicher</h1>
-        <p>Herzlich willkommen auf meiner Webseite</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis veniam adipisci nobis perferendis sed
-          quos harum distinctio fugiat officia eveniet ducimus blanditiis ipsum assumenda quis, sapiente at, voluptate
-          dolores alias cupiditate molestiae nisi tempore ad dolorem doloribus? Animi facere vitae, dicta unde
-          reprehenderit tempore omnis inventore dolore, incidunt dolores sit?</p>
+      <svg class="cross-grid" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <pattern id="crosses" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M17 10h6v7h7v6h-7v7h-6v-7h-7v-6h7z" fill="currentColor"/>
+          </pattern>
+        </defs>
+        <rect width="200" height="200" fill="url(#crosses)"/>
+      </svg>
+      <div class="container">
+        <p class="eyebrow">Gemeinnütziger Verein</p>
+        <h1>Open Source. <span class="u-red">Schweizer Boden.</span><br>Keine Kompromisse.<span class="u-indigo">_</span></h1>
+        <p class="lead">Swiss Hosted Solutions ist ein nicht gewinnorientierter Verein nach Schweizer Recht. Wir beschleunigen den Einsatz von reiner Open-Source-Software und von Lösungen, die ausschliesslich auf Schweizer Boden gehostet werden.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/de/kontakt.html">Kontakt aufnehmen</a>
+          <a class="btn btn-outline" href="/de/projekte.html">Unsere Projekte</a>
+        </div>
       </div>
     </section>
 
-    <div class="interests">
-      <!-- <h2>Markus Eicher - Profil, Sofware Entwicklung, Gesundheitswesen und Lernressourcen</h2> -->
-      <div class="interests-inner">
-
-        <section id="software">
-          <h2>Mein Weg zum Software Entwickler</h2>
-          <p>Wie und weshalb ich Software Entwickler werde. Projekte, Lernressourcen und Inhalte zum Thema.</p>
-        </section>
-
-        <section id="creativity">
-          <h2>Malen, Zeichnen und digitale Kreativität</h2>
-          <p>Künstlerisch tätig zu sein ist für mich gleichermassen Spass wie Therapie. Erahrungen und Arbeiten von mir
-            dazu.</p>
-        </section>
-
-        <section id="sports">
-          <h2>Sportfan mit Leidenschaft</h2>
-          <p>Meine Lieblingssportarten und meine Teams</p>
-        </section>
-
+    <!-- Grundsätze -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><div class="num">100&nbsp;%</div><div class="label">Open Source — keine proprietäre Software</div></div>
+        <div class="stat"><div class="num">100&nbsp;%</div><div class="label">Hosting auf Schweizer Boden</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Cookies, Tracker und externe Dienste</div></div>
+        <div class="stat"><div class="num">Non-Profit</div><div class="label">Verein nach Schweizer Recht (Art. 60 ff. ZGB)</div></div>
       </div>
-
-    </div>
-
-    <section id="about">
-      <h2>Mein Profil</h2>
-      <p>Wer ich bin, was ich mag und ein paar andere Dinge über mich.</p>
     </section>
 
-    <section id="contact">
-      <h2>Kontaktdaten</h2>
-      <p>Wie man mich erreichen kann und meine Sozialen Netzwerke</p>
+    <!-- Was wir tun -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Was wir tun</p>
+        <h2>Digitale Souveränität statt Vendor-Lock-in</h2>
+        <p class="lead">Wir unterstützen Privatpersonen, kleine Unternehmen, Start-ups und öffentliche Verwaltungen dabei, Open-Source-Lösungen einzusetzen — statt sich an proprietäre Anbieter zu binden.</p>
+        <div class="card-grid cols-4">
+          <article class="card">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+            <h3>Open Source zuerst</h3>
+            <p>Wir setzen konsequent auf freie Software mit offenen Lizenzen — überprüfbar, anpassbar und ohne versteckte Lizenzfallen.</p>
+          </article>
+          <article class="card">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M12 8v4m-2-2h4"/></svg></span>
+            <h3>Nur Schweizer Hosting</h3>
+            <p>Alle Lösungen, die wir empfehlen oder betreiben, laufen ausschliesslich in Rechenzentren auf Schweizer Boden — unter Schweizer Recht.</p>
+          </article>
+          <article class="card">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 10.5 21 3m-5 0h5v5M10.5 13.5 3 21m5 0H3v-5"/></svg></span>
+            <h3>Kein Vendor-Lock-in</h3>
+            <p>Offene Standards und offene Formate statt Abhängigkeit: Wer zu uns kommt, kann jederzeit wieder gehen — mit allen Daten.</p>
+          </article>
+          <article class="card">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/></svg></span>
+            <h3>Wissen teilen</h3>
+            <p>Anleitungen, Rezepte und Infrastructure as Code — damit alle Open Source selbst betreiben können, vom Privathaushalt bis zur Behörde.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <!-- Warum -->
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Warum Swiss Hosted Solutions</p>
+          <h2>Unabhängigkeit ist kein Zufall. Sie ist eine Entscheidung.</h2>
+          <ul class="checklist">
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Gemeinnützig</strong> — als Verein verfolgen wir keine kommerziellen Interessen. Unser Auftrag ist die Sache, nicht der Gewinn.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Privacy first</strong> — Daten gehören ihren Besitzerinnen und Besitzern. Sie bleiben in der Schweiz, unter Schweizer Recht.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Transparenz</strong> — offene Software, offene Prozesse, offene Kommunikation.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Kein Tracking</strong> — auch auf dieser Website: keine Cookies, keine Analyse-Tools, keine externen Dienste.</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Unser Zweck</h3>
+          <p>Wir beschleunigen die Verbreitung von reiner Open-Source-Software und von Lösungen, die in der Schweiz gehostet werden — als Alternative zu Vendor-Lock-in und proprietären Plattformen.</p>
+          <p>Davon profitieren Nutzerinnen und Nutzer, kleine Unternehmen, Unternehmerinnen und Unternehmer sowie staatliche Organisationen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projekte -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Unsere Projekte</p>
+        <h2>Woran wir arbeiten</h2>
+        <div class="card-grid cols-2">
+          <article class="card project-card">
+            <div class="thumb"></div>
+            <span class="tag">Selbst-Hosting</span>
+            <h3>Hosted NextCloud</h3>
+            <p>Selbstbedienungs-Rezepte und Infrastructure-as-Code-Vorlagen für die eigene NextCloud-Instanz. Später auch als Community-getragenes Hosting — ohne SLA, aber mit viel Herz und Know-how.</p>
+            <a class="card-link" href="/de/projekte/hosted-nextcloud.html">Mehr erfahren <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card project-card">
+            <div class="thumb alt"></div>
+            <span class="tag red">Transparenz</span>
+            <h3>Luegid ane</h3>
+            <p>«Schaut hin»: Wir beobachten und dokumentieren die Ausgaben und Auftragsvergaben der öffentlichen Hand — auf Basis von simap.ch und einem Wissensgraphen.</p>
+            <a class="card-link" href="/de/projekte/luegid-ane.html">Mehr erfahren <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card project-card">
+            <div class="thumb ki"></div>
+            <span class="tag">KI</span>
+            <h3>Lokale KI</h3>
+            <p>Lokale KI mit Open-Source-Modellen — sicher und vertraulich für kleine Firmen, Vereine, Gemeinden und die Verwaltung. Mieten Sie unsere Hardware zu fairen Preisen: Ihre Daten, Ihre Hardware.</p>
+            <a class="card-link" href="/de/projekte/lokale-ki.html">Mehr erfahren <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card project-card">
+            <div class="thumb uus"></div>
+            <span class="tag red">Transparenz</span>
+            <h3>Uuskunft</h3>
+            <p>«Auskunft» — die Plattform für Bürgerfragen: Unsere hauseigene KI verarbeitet laufend Daten aus dem Parlament und aus öffentlichen Quellen. Offen und transparent, mit Einsicht in alle Datenquellen.</p>
+            <a class="card-link" href="/de/projekte/uuskunft.html">Mehr erfahren <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="text-center mt-2"><a class="btn btn-outline" href="/de/projekte.html">Alle Projekte im Detail</a></p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Bereit für echte digitale Unabhängigkeit?</h2>
+          <p>Nehmen Sie Kontakt auf — wir helfen beim Einstieg in Open Source, ganz ohne Verkaufsdruck.</p>
+          <a class="btn btn-light" href="/de/kontakt.html">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="/de/">
+          <svg viewBox="0 0 64 48" aria-hidden="true">
+            <path d="M2 7 C20 -1 44 13 62 5 L62 41 C44 49 20 35 2 43 Z" fill="#ce3126"/>
+            <rect x="28" y="12" width="8" height="24" rx="1.5" fill="#f1f1e1"/>
+            <rect x="20" y="20" width="24" height="8" rx="1.5" fill="#f1f1e1"/>
+          </svg>
+          <span class="brand-name">Swiss Hosted<br><span>Solutions</span></span>
+        </a>
+        <p class="footer-tagline">Gemeinnütziger Verein nach Schweizer Recht für reine Open-Source-Software — gehostet ausschliesslich auf Schweizer Boden.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/de/">Startseite</a></li>
+          <li><a href="/de/ueber-uns.html">Über uns</a></li>
+          <li><a href="/de/projekte.html">Projekte</a></li>
+          <li><a href="/de/kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Projekte</h4>
+        <ul>
+          <li><a href="/de/projekte/hosted-nextcloud.html">Hosted NextCloud</a></li>
+          <li><a href="/de/projekte/luegid-ane.html">Luegid ane</a></li>
+          <li><a href="/de/projekte/lokale-ki.html">Lokale KI</a></li>
+          <li><a href="/de/projekte/uuskunft.html">Uuskunft</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:shsadmin@swisshostedsolutions.ch">shsadmin@swisshostedsolutions.ch</a></li>
+          <li>Schweiz</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Swiss Hosted Solutions — Verein nach Schweizer Recht</span>
+      <span>Keine Cookies. Kein Tracking. Keine externen Dienste.</span>
+    </div>
+  </footer>
+
+  <script>
+    /* Teil der JS-Ausnahme: Umschalten des Farbschemas, Wahl wird lokal gespeichert. */
+    (function () {
+      var btn = document.querySelector(".theme-toggle");
+      if (!btn) { return; }
+      btn.addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute("data-theme") === "dark" ||
+          (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("shs-theme", next);
+      });
+    })();
+  </script>
 </body>
-
-<footer>
-  <p>Die Fussnoten. Kontakt, Impressum, Sitemap und andere Links.</p>
-</footer>
-
 </html>

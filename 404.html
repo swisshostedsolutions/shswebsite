@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting to English version...</title>
-    <meta http-equiv="refresh" content="0; URL='/en'">
-  </head>
-  <body>
-    <p>If you are not redirected automatically, follow the <a href="/en">link to the English version</a>.</p>
-  </body>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Seite nicht gefunden · Page not found</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem("shs-theme");
+      if (t) { document.documentElement.setAttribute("data-theme", t); }
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <svg class="cross-grid" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <pattern id="crosses" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M17 10h6v7h7v6h-7v7h-6v-7h-7v-6h7z" fill="currentColor"/>
+          </pattern>
+        </defs>
+        <rect width="200" height="200" fill="url(#crosses)"/>
+      </svg>
+      <div class="container">
+        <p class="eyebrow">404</p>
+        <h1>Seite nicht gefunden.<span class="u-red">_</span></h1>
+        <p class="lead">Diese Seite existiert nicht (mehr). Zurück zur Startseite:</p>
+        <p class="lead" lang="en">This page does not exist (anymore). Back to the home page:</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/de/">Startseite (Deutsch)</a>
+          <a class="btn btn-outline" href="/en/" hreflang="en" lang="en">Home (English)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>

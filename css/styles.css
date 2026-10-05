@@ -27,6 +27,12 @@
   --brand-red: #ce3126;
   --brand-indigo: #51479c;
   --brand-cream: #f1f1e1;
+  /* Derived brand shades (gradients, panels on brand backgrounds) */
+  --brand-indigo-deep: #3a3375;
+  --brand-red-deep: #8f1f17;
+  --brand-ink: #211d3a;
+  --on-brand: #ffffff;
+  --thumb-stripe: rgba(255, 255, 255, 0.07);
 
   /* Light theme (Swiss editorial: paper & ink) */
   --bg: #f3f2e7;
@@ -366,7 +372,7 @@ img, svg { display: block; max-width: 100%; }
   background: var(--accent);
   color: var(--accent-ink);
 }
-.btn-primary:hover { box-shadow: 0 6px 20px rgba(206, 49, 38, 0.35); }
+.btn-primary:hover { box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 35%, transparent); }
 
 .btn-outline {
   border-color: var(--ink);
@@ -530,7 +536,7 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--radius);
   padding: 2.5rem 2rem;
 }
-.panel h3 { color: #fff; }
+.panel h3 { color: var(--on-brand); }
 .panel p {
   color: #dddbc9;
   color: color-mix(in srgb, var(--brand-cream) 85%, transparent);
@@ -540,13 +546,13 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- CTA banner ---------- */
 .cta-banner {
   background: var(--brand-indigo);
-  background: linear-gradient(135deg, var(--brand-indigo), #3a3375);
+  background: linear-gradient(135deg, var(--brand-indigo), var(--brand-indigo-deep));
   color: var(--brand-cream);
   border-radius: var(--radius);
   padding: 2.5rem 1.75rem;
   text-align: center;
 }
-.cta-banner h2 { color: #fff; }
+.cta-banner h2 { color: var(--on-brand); }
 .cta-banner p {
   color: #d3d0c0;
   color: color-mix(in srgb, var(--brand-cream) 80%, transparent);
@@ -578,27 +584,27 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: 1.25rem;
   background: var(--brand-indigo);
   background:
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,0.06) 14px 28px),
-    linear-gradient(135deg, var(--brand-indigo), #3a3375);
+    repeating-linear-gradient(45deg, transparent 0 14px, var(--thumb-stripe) 14px 28px),
+    linear-gradient(135deg, var(--brand-indigo), var(--brand-indigo-deep));
   position: relative;
   overflow: hidden;
 }
 .project-card .thumb.alt {
   background: var(--brand-red);
   background:
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,0.08) 14px 28px),
-    linear-gradient(135deg, var(--brand-red), #8f1f17);
+    repeating-linear-gradient(45deg, transparent 0 14px, var(--thumb-stripe) 14px 28px),
+    linear-gradient(135deg, var(--brand-red), var(--brand-red-deep));
 }
 .project-card .thumb.ki {
-  background: #211d3a;
+  background: var(--brand-ink);
   background:
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,0.06) 14px 28px),
-    linear-gradient(135deg, #211d3a, var(--brand-indigo));
+    repeating-linear-gradient(45deg, transparent 0 14px, var(--thumb-stripe) 14px 28px),
+    linear-gradient(135deg, var(--brand-ink), var(--brand-indigo));
 }
 .project-card .thumb.uus {
   background: var(--brand-indigo);
   background:
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,0.07) 14px 28px),
+    repeating-linear-gradient(45deg, transparent 0 14px, var(--thumb-stripe) 14px 28px),
     linear-gradient(135deg, var(--brand-indigo), var(--brand-red));
 }
 
@@ -652,8 +658,8 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--radius);
   padding: 1.75rem;
 }
-.info-card h3 { color: #fff; }
-.info-card a { color: #fff; text-decoration: underline; }
+.info-card h3 { color: var(--on-brand); }
+.info-card a { color: var(--on-brand); text-decoration: underline; }
 .info-card dl { margin: 0; }
 .info-card dt {
   font-size: 0.75rem;
